@@ -1,12 +1,12 @@
 ﻿# API Automation Framework – RestSharp & NUnit
 
-A clean, scalable API automation framework built using **C#, NUnit, and RestSharp**, validating real-world REST APIs with both positive and negative test scenarios.
+A clean, scalable **API automation framework** built using **C#, NUnit, and RestSharp**, validating real-world REST APIs with both positive and negative test scenarios.
 
 ---
 
 ## 🚀 Project Overview
 
-This repository demonstrates **real-world API automation practices** by testing a public REST service:
+This framework implements **real-world API automation practices** by testing a public REST service:
 
 🔗 https://api.restful-api.dev/objects
 
@@ -15,7 +15,7 @@ The framework validates:
 - HTTP status codes
 - Error handling and API behavior for invalid and reserved resources
 
-The focus is on **maintainability, readability, and correctness**, similar to enterprise API automation projects.
+The primary focus is on **maintainability, readability, and correctness**, aligning with enterprise-level API automation standards.
 
 ---
 
@@ -31,24 +31,26 @@ The focus is on **maintainability, readability, and correctness**, similar to en
 
 ## 📁 Project Structure
 
-ApiAutomation/
+ApiAutomation
 │
-├── Base/
+├── Base
 │ └── TestBase.cs # Common setup & teardown
 │
-├── Tests/
+├── Tests
 │ ├── CreateUser.cs # POST tests
 │ ├── GetUserTest.cs # GET tests
 │ ├── UpdateUser_Put.cs # PUT tests
 │ ├── PartialUpdate_Patch.cs # PATCH tests
 │ └── DeleteUserTest.cs # DELETE tests
 │
-├── Models/
+├── Models
 │ └── ObjectResponse.cs # Response deserialization model
 │
 ├── ApiAutomation.csproj
 └── README.md
 
+yaml
+Copy code
 
 ---
 
@@ -71,7 +73,7 @@ ApiAutomation/
 ## 🔄 NUnit Lifecycle Usage
 
 | Attribute | Purpose |
-|--------|---------|
+|---------|---------|
 | `[SetUp]` | Initializes RestClient before each test |
 | `[TearDown]` | Cleans up resources after each test |
 | `[Test]` | Marks a test method |
@@ -81,55 +83,67 @@ ApiAutomation/
 
 ## ▶️ How to Run Tests
 
-### Run all tests
+### Prerequisites
+- .NET SDK 10 installed
+- Internet connection (public API)
+
+### Clone Repository
 ```bash
+git clone https://github.com/mamata-salunkhe/api-automation-csharp.git
+cd api-automation-csharp
+Run All Tests
+bash
+Copy code
 dotnet restore
 dotnet test
-
-## Run specific category (example: DELETE tests)
+Run Specific Category (example: DELETE tests)
+bash
+Copy code
 dotnet test --filter Category=DELETE
+⭐ Key Highlights
+Centralized API client setup using base test classes
 
-Key Highlights
+Strong assertion strategy (status codes, response content, headers)
 
-Centralized API client setup using BaseTest
+Proper deserialization for response validation
 
-Strong assertion strategy (status code, content, headers)
-
-Deserialization for response validation
-
-Realistic negative test cases
+Realistic negative test scenarios
 
 Clean and maintainable test naming conventions
 
-🎯 Why This Project?
+CI-ready structure
 
+🎯 Project Objective
 This project reflects industry-level API automation fundamentals, including:
 
 Understanding API contracts
 
-Handling error responses
+Handling error responses gracefully
 
-Writing maintainable automated tests
+Writing scalable and maintainable automated tests
 
 Using NUnit effectively in CI-ready test suites
 
-
-## 🚧 In Progress / Planned Enhancements
-
+🚧 Planned Enhancements
 The current framework focuses on core API automation fundamentals.
-The following enhancements are planned to align the project further with enterprise-level automation frameworks:
+The following enhancements are planned to further align with enterprise automation frameworks:
 
-- Externalized configuration using `appsettings.json` (multi-environment support)
-- Request and response builder utilities to reduce duplication
-- Authentication handling (Bearer token / API key simulation)
-- JSON schema validation for response contracts
-- Centralized assertion helpers
-- Integration with CI pipelines (GitHub Actions)
-- HTML test reporting (Allure / Extent Reports)
+Externalized configuration using appsettings.json
 
-These enhancements will be added incrementally to maintain clarity and stability of the framework.
+Multi-environment execution support
+
+Request and response builder utilities
+
+Authentication handling (Bearer token / API key simulation)
+
+JSON schema validation
+
+Centralized assertion helpers
+
+CI integration using GitHub Actions
+
+HTML reporting (Allure / Extent Reports)
 
 🤝 Contributions
-
 Suggestions, refactoring ideas, and improvements are welcome.
-Feel free to fork the repo and raise a pull request.
+Feel free to fork the repository and raise a pull request.
