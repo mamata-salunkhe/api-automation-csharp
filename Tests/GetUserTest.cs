@@ -9,7 +9,7 @@ using System.Text;
 
 namespace ApiAutomation
 {
-    internal class GetUserTest : BaseTest
+    internal class GetUserTest : TestBase
     {
        
         [Test]
